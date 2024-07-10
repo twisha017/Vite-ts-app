@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 const App: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [pgSize, setPgSize] = useState<number>(10);
   const navigate = useNavigate();
 
 
@@ -21,9 +20,6 @@ const App: React.FC = () => {
       alert('Please enter your details before accessing this page.');
       navigate('/');
     }
-    const handlePageSizeChange = (newPageSize: number) => {
-      setPgSize(newPageSize);
-    };
     
     const fetchPosts = async () => {
       try {
